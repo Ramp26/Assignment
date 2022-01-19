@@ -7,7 +7,7 @@ public class StringPalindrome {
 		int r, sum = 0, temp;
 
 		// It is the number variable to be checked for palindrome		
-		int n = 456;
+		int n = 454;
 
 		temp = n;
 		
