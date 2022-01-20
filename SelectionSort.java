@@ -27,8 +27,7 @@ public class SelectionSort {
 			}
 	}
 
-	// Print the array
-
+	
 	void printArray(int arr[]) {
 
 		int n = arr.length;
@@ -46,7 +45,7 @@ public class SelectionSort {
 		SelectionSort ob = new SelectionSort();
 		int arr[] = {64,25,12,22,11};
 		ob.sort(arr);
-		System.out.println("====Sort array====");
+		System.out.println("Sorted array");
 		ob.printArray(arr);
 		
 	

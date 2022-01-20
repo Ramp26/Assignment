@@ -18,15 +18,15 @@ public class InsertionSort {
 	}
 
 	public static void main(String[] args) {
-		int[] arr1 = { 9, 14, 3, 2, 43, 11, 58, 22 };
-		System.out.println("===Befor insertion Sort===");
+		int[] arr1 = {10,24,1,2,22,34};
+		System.out.println("Befor insertion Sort");
 
 		for (int i : arr1) {
 			System.out.println(i + "");
 		}
 		System.out.println();
 
-		insertionSort(arr1); // sorting array using insertion sort
+		insertionSort(arr1); 
 
 		System.out.println("After Insertion Sort");
 
