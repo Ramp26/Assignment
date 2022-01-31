@@ -1,4 +1,4 @@
-package com.te.assaignment.comperator;
+package com.te.java.assignment.comperator;
 
 import java.util.ArrayList;
 import java.util.Collections;
