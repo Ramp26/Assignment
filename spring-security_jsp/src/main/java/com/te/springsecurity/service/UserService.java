@@ -51,13 +51,13 @@ public class UserService implements UserDetailsService {
 
 	}
 
-	public boolean updatedata(User user) {
+	public User updatedata(User user) {
 		if (user != null) {
-			impl.save(user);
+			
 
-			return true;
+			return impl.save(user);
 		} else {
-			return false;
+			return null;
 		}
 
 	}
@@ -68,6 +68,13 @@ public class UserService implements UserDetailsService {
 	
 		return (List<User>) impl.findAll();
 		
+	}
+
+	public User getByUserName(String userName) {
+		
+	User user= impl.findByUserName(userName);
+		 
+		 return user;
 	}
 	
 

@@ -1,5 +1,6 @@
 package com.te.springsecurity.controller;
 
+import java.security.Principal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -76,19 +77,30 @@ public class UserController {
 	
 	
 	@GetMapping("/update")
-	public String updatedata() {
+	public String updatedata(ModelMap map,Principal principal ) {
+		String userName=principal.getName();
+		User user1=	service.getByUserName(userName);
 		
+		map.addAttribute("data", user1);
 		return  "updateform";
 		
 	}
 	
 	@PostMapping("/update")
-	public String updatedata(User user,ModelMap map) {
-	boolean user1=	service.updatedata(user);
-	if(user1!=false) {
+	public String updatedata(User user,ModelMap map,Principal principal) {
+		String userName=principal.getName();
+		
+	User user1=	service.getByUserName(userName);
+	user.setUserId(user1.getUserId());
+  
+	User user2=service.updatedata(user);
+	
+	if(user2!=null) {
+		
 		map.addAttribute("msg", "update successfully");
 		return "updateform";
 	}else {
+		
 		map.addAttribute("msg", "something went wrong");
 		return"updateform";
 	}

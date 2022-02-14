@@ -1,6 +1,8 @@
+<%@page import="com.te.springsecurity.dto.User"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 	<%  String  string=(String) request.getAttribute("msg"); %>
+	<% User user=(User) request.getAttribute("data"); %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,7 +35,7 @@ body {
 <div class="container">
   <div class="row">
     <div class="col">
-      <input type="number" class="form-control" placeholder="User Id" name="userId" >
+      <input type="number" class="form-control"  value="<%=user.getUserId()%>" disabled="disabled"  >
     </div>
     <div class="col">
       <input type="text" class="form-control" placeholder="User name" name="userName" >
